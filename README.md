@@ -1,0 +1,1 @@
+[![Build Status](https://travis-ci.org/luziandrade/antiquities_milestone.svg?branch=master)](https://travis-ci.org/luziandrade/antiquities_milestone)

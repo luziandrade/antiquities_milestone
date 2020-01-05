@@ -118,6 +118,7 @@ body {
     padding-top:50px;
     padding-left:50px;
     padding-right:50px;
+
 }
 .navpage{
     background-image: url(https://www.nationalgeographic.com/content/dam/news/2016/01/12/mummies/01mummytypes.jpg);
@@ -125,6 +126,9 @@ body {
     height: 50vh;
     background-position: 30% 60%;
     background-attachment: fixed;
+}
+form{
+    width: 50%;!important;
 }
 /* Footer section */
 footer{
