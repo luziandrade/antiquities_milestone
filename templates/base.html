@@ -35,6 +35,14 @@
                          <li><a href="{% url 'login' %}">Login</a></li>
                          <li><a href="{% url 'registration' %}">Register</a></li>
                     {% endif %}
+                    <li>
+                        <a href="{% url 'view_cart' %}">
+                            <i class="fa fa-shipping-cart"></i>Cart
+                            {% if product_count > 0 %}
+                            <label class="badge badge-warning">{{ product_count }}</label>
+                            {% endif %}
+                        </a>
+                    </li>
                 </ul>
            </div>
             <span class="navTrigger">
@@ -51,6 +59,8 @@
                 {% endfor %}
             </div>
             {% endif %}
+
+
         {% block content %}{% endblock %}
 
  <!--<footer class="footer-distributed">
