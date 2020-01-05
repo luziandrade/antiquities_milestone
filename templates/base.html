@@ -19,7 +19,6 @@
 
 </head>
 <body>
-
  <nav class="nav">
         <div class="container">
             <div class="logo">
@@ -30,6 +29,7 @@
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'profile' %}">Profile</a></li>
                         <li><a href="{% url 'logout' %}">Logout</a></li>
+                        <li><a href="#">Welcome, {{ user }}</a></li>
                     {% else %}
                          <li><a href="{% url 'login' %}">Login</a></li>
                          <li><a href="{% url 'registration' %}">Register</a></li>
@@ -43,9 +43,6 @@
             </span>
         </div>
  </nav>
-     <section class="home">
-    </section>
-        <hr>
             {% if messages %}
             <div>
                 {% for message in messages %}
@@ -54,6 +51,42 @@
             </div>
             {% endif %}
         {% block content %}{% endblock %}
+
+ <!--<footer class="footer-distributed">
+    <div class="footer-left">
+        <h3>About<span>Artifacts</span></h3>
+        <p class="footer-links">
+            <a href="#">About</a>
+            |
+           <a href="#">Auction</a>
+            |
+            <a href="{% url 'registration' %}">Register</a>
+        </p>
+        <p class="footer-company-name">© 2020 Milestone Project | Code Institute</p>
+    </div>
+    <div class="footer-center">
+        <div>
+            <i class="fa fa-phone"></i>
+            <p>+353 110 200352</p>
+        </div>
+        <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="mailto:support@eduonix.com">support@antiquities.com</a></p>
+        </div>
+    </div>
+    <div class="footer-right">
+        <p class="footer-company-about">
+            <span>About the company</span>
+            We offer </p>
+        <div class="footer-icons">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+        </div>
+    </div>
+</footer>-->
+
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
         $(window).scroll(function() {
