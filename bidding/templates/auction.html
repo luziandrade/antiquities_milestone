@@ -10,7 +10,7 @@
         <p>{{ bids.description }}</p>
         <p>{{ bids.price }}</p>
         <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ bid.image }}')"></div>
-        Bidder: <input type="text" name="country" value="{{ user }}" readonly><br>
+        <!--Bidder: <input type="text" name="country" value="{{ user }}" readonly><br>-->
         <form method="POST" enctype="multipart/form-data">
             <div class="input-group">
                 {% csrf_token %}
@@ -21,6 +21,7 @@
         <div id="timebid">
             Date :
         </div>
+        <div>You have bidded {{ bids.price }}</div>
     </div>
 </div>
  <!--   <div class="container">
