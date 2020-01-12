@@ -25,4 +25,4 @@ def create_questions(request):
             return redirect(get_questions)
     else:
         form = QuestionForm()
-    return render(request, 'questions.html', {'form': form, 'author': User})
+    return render(request, 'questions.html', {'form': form})
