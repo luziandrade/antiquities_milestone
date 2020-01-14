@@ -171,11 +171,24 @@ caption p {
 .panel-default {
     border-color: transparent;
     padding: 0 10px;
+    margin: 10px;
 }
 
 .panel-body {
-    height: 100%;
-    border: 1px solid #ddd;
+    height: 50%;
+    padding: 5%;!important;
+}
+.card{
+    margin-top: 30px;!important;
+    width: 50px;!important;
+}
+.card-img-top{
+    height: 250px;!important;
+    width: 150px;!important;
+    background-repeat: no-repeat;!important;
+}
+.deck{
+    margin: 30px;
 }
 
 .product-description {
@@ -190,6 +203,7 @@ footer{
 	position: fixed;
 	bottom: 0;
 }
+
 
 
 .footer-distributed{
@@ -336,6 +350,8 @@ footer{
 	margin-right: 3px;
 	margin-bottom: 5px;
 }
+
+
 
 /* Media qurey section */
 

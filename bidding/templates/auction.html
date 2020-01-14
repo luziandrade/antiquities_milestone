@@ -21,7 +21,6 @@
         <div id="timebid">
             Date :
         </div>
-        <div>You have bidded {{ bids.price }}</div>
     </div>
 </div>
  <!--   <div class="container">
@@ -34,7 +33,7 @@
     </div> -->
     <script>
 // Set the date we're counting down to
-var countDownDate = new Date({{ bids.date }});
+var countDownDate = new Date({{ bids.date|date:"U"}} * 1000);
 
 // Update the count down every 1 second
 var x = setInterval(function() {
