@@ -4,15 +4,15 @@
 <section class="navpage">
 
 </section>
-<div class="row row-flex">
-        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
-            <div class="panel-body">
-                <div> {{ question.question }} </div>
-
-                <textarea rows="4" cols="50">
-                </textarea>
-            </div>
+    <div class="form-middle">
+        <div class="card">
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">{{ question.question }}</label>
+                    <input type="text" class="form-control" id="textarea" aria-describedby="question" rows="4" cols="50">
+                </div>
+            </form>
         </div>
-</div>
+    </div>
 {% endblock %}
 

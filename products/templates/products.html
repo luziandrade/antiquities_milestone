@@ -8,10 +8,14 @@
 <div class="card-deck">
     {% for product in products %}
         <div class="card">
-            <div class="card-img-top" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
+            <a href="{% url 'see_product' product.id %}">
+                <div class="image-container">
+                    <img src="{{ MEDIA_URL }}{{ product.image }}" class="card-img-top img-responsive" alt="product image">
+                </div>
+            </a>
             <div class="card-body">
-                <h3 class="card-title"><a href="{% url 'see_product' product.id %}">{{ product.name }}</a></h3>
-                <p class="card-text">{{ product.price }}</p>
+                <h5 class="card-title"><a href="{% url 'see_product' product.id %}">{{ product.name }}</a></h5>
+                <p class="card-text">Price: €{{ product.price }}</p>
 
             </div>
         </div>

@@ -8,15 +8,17 @@
 <section class="navpage">
 
 </section>
-<div class="loginage">
-    <h2>Sign in</h2>
-        <form method="POST">
-            <div class="form-group">
-            {% csrf_token %}
-            {{ login_form | as_bootstrap }}
-            <button type="submit" class="btn btn-dark">Login</button>
-            </div>
-        </form>
+<div class="form-middle container-sm">
+    <div class="loginage">
+        <h2>Sign in</h2>
+            <form method="POST">
+                <div class="form-group">
+                {% csrf_token %}
+                {{ login_form | as_bootstrap }}
+                <button type="submit" class="btn btn-dark">Login</button>
+                </div>
+            </form>
+    </div>
 </div>
 
 {% endblock %}

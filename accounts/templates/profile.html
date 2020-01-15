@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
-
+{% load bootstrap_tags %}
 {% block page_title %}{{ user }}'s Profile{% endblock %}
 
-
-
 {% block content %}
+<section class="navpage">
 
-    {{ user }}'s Profile
-<p>{{ profile.email }}</p>
+</section>
+
+
+<div class="form-middle container-sm">
+    <div class="card">
+        <h4> {{ user }}'s Profile</h4>
+    <p class="card-text">{{ profile.email }}</p>
+    </div>
+</div>
 {% endblock %}

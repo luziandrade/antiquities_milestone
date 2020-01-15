@@ -4,11 +4,16 @@
 <section class="navpage">
 
 </section>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form | as_bootstrap }}
-        <button type="submit" class="btn btn-info">Save</button>
-    </form>
+    <div class="form-middle container-sm">
+        <form method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                {% csrf_token %}
+                <label for="question">Ask a </label>
+                {{ form | as_bootstrap }}
+                <button type="submit" class="btn btn-info">Save</button>
+            </div>
+        </form>
+    </div>
 <div class="row row-flex">
     {% for question in questions %}
         <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">

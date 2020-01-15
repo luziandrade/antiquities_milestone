@@ -4,25 +4,31 @@
 <section class="navpage">
 
 </section>
-<div class="row row-flex">
-        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
-            <div class="panel-body">
-                <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></a>
+    <div class="card mb-3">
+        <div class="row no-gutters">
+            <div class="col-md-5 row-flex">
+                <div class="image-container">
+                    <img src="{{ MEDIA_URL }}{{ product.image }}" class="card-img-top img-responsive" alt="product image">
+                </div>
+            </div>
+            <div class="col-md-3 row-flex">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text">{{ product.description }}</p>
+                        <p class="card-text">Price: €{{ product.price }}</p>
 
-                <h3>{{ product.name }}</h3>
-                <p class="product-description">{{ product.description }}</p>
-                <p>{{ product.price }}</p>
-
-                <form method="post" action="{% url 'add_to_cart' product.id %}">
-                    {% csrf_token %}
-                    <div class="input-group">
-                        <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
-                        <span class="input-group-btn">
-                            <button class="btn btn-success" type="submit">Add</button>
-                        </span>
+                    <form method="post" action="{% url 'add_to_cart' product.id %}">
+                        {% csrf_token %}
+                        <div class="input-group">
+                            <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+                            <span class="input-group-btn">
+                                <button class="btn btn-success" type="submit">Add</button>
+                            </span>
+                        </div>
+                    </form>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
-</div>
+
 {% endblock %}

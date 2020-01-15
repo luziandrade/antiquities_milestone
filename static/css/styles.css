@@ -4,16 +4,19 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Quicksand", sans-serif!important;
-    font-size: 62.5%!important;
-    font-size: 10px!important;
+    font-family: "Quicksand", sans-serif!important
 }
 /* Navbar section */
 .container{
-    margin-right : 10px!important;
-    margin-left : 10px!important;
+    padding: 0;
+    max-width: 100%;
 }
 
+.form-middle{
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+}
 
 .nav {
     width: 100%;
@@ -21,6 +24,7 @@ body {
     position: fixed;
     line-height: 65px;
     text-align: center;
+    z-index: 1;
 }
 
 .nav div.logo {
@@ -28,6 +32,7 @@ body {
     width: auto;
     height: auto;
     padding-left: 3rem;
+    padding-right: 1rem;
 }
 
 .nav div.logo a {
@@ -68,7 +73,7 @@ body {
     text-decoration: none;
     color: #fff;
     line-height: 65px;
-    font-size: 2.4rem;
+    font-size: 1.4rem;
 }
 
 .nav div.main_list ul li a:hover {
@@ -180,12 +185,24 @@ caption p {
 }
 .card{
     margin-top: 30px;!important;
-    width: 50px;!important;
+}
+.cart-list{
+    height: 200px;
+    overflow: hidden;
+}
+.image-container{
+    height: 500px;
+    overflow: hidden;
+}
+
+.card .img-responsive {
+    display: block;
+    width: auto;
+    max-height: 100%;
 }
 .card-img-top{
-    height: 250px;!important;
-    width: 150px;!important;
     background-repeat: no-repeat;!important;
+    overflow: hidden;
 }
 .deck{
     margin: 30px;
@@ -195,9 +212,7 @@ caption p {
     min-height: 40px;
 }
 
-form{
-    width: 50%;!important;
-}
+
 /* Footer section */
 footer{
 	position: fixed;
@@ -358,10 +373,11 @@ footer{
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .container {
         margin: 0;
+        max-width: 100%;
     }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:1010px) {
     .navTrigger {
         display: block;
     }
@@ -401,6 +417,10 @@ footer{
     .nav div.media_button {
         display: block;
     }
+    .form-middle{
+        width: 100%;
+    }
+
 }
 
 

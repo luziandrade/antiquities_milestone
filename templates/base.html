@@ -7,14 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block page_title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'js/javascript.js' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     {% block head_js %}
     {% endblock head_js %}
 
@@ -25,18 +24,16 @@
             <div class="logo">
                 <a href="#">Artifacts</a>
             </div>
-            <div id="mainListDiv" class="main_list">
+            <div id="mainListDiv" class="main_list  justify-content-end">
                 <ul class="navlinks">
                     {% if user.is_authenticated %}
+                        <li><a href="{% url 'products' %}">Products</a> </li>
+                        <li><a href="{% url 'items' %}">Bids</a></li>
                         <li><a href="{% url 'profile' %}">Profile</a></li>
                         <li><a href="{% url 'logout' %}">Logout</a></li>
                         <li><a href="#">Welcome, {{ user }}</a></li>
                         <li><i class="fa fa-user-circle"></i></li>
-                    {% else %}
-                         <li><a href="{% url 'login' %}">Login</a></li>
-                         <li><a href="{% url 'registration' %}">Register</a></li>
-                    {% endif %}
-                    <li>
+                        <li>
                         <a href="{% url 'view_cart' %}">
                             <i class="fa fa-shipping-cart"></i>Cart
                             {% if product_count > 0 %}
@@ -44,6 +41,11 @@
                             {% endif %}
                         </a>
                     </li>
+                    {% else %}
+                         <li><a href="{% url 'login' %}">Login</a></li>
+                         <li><a href="{% url 'registration' %}">Register</a></li>
+                    {% endif %}
+
                 </ul>
            </div>
             <span class="navTrigger">
