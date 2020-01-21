@@ -30,7 +30,7 @@
                         <h5>{{ item.product.name }}</h5>
                         <p class="card-text">{{ item.product.description }}</p>
                         <p class="card-text">Quantity: {{ item.quantity }}</p>
-                        <p class="card-text">Price per unit: € €{{ item.product.price}}</p>
+                        <p class="card-text">Price per unit: €{{ item.product.price}}</p>
                     </div>
                 </div>
          </div>
@@ -58,7 +58,7 @@
 
         {% csrf_token %}
         <div class="form-group col-md-12">
-            <input class=" btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
+            <input class="btn btn-warning" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
         </div>
     </form>
 </div>

@@ -17,25 +17,12 @@
                 <p class="card-text">{{ item.description }}</p>
                 <p class="card-text">€{{ item.price }}</p>
                 <a href="{% url 'item' item.id %}">
-                    <button class="btn btn-success" type="submit">Bid</button>
+                    <button class="btn btn-warning" type="submit">Bid</button>
                 </a>
-                {% comment %}<form method="post" action="{% url 'item' item.id %}">
-                    {% csrf_token %}
-                    <div class="input-group">
-                            <button class="btn btn-success" type="submit">Bid</button>
-                        </span>
-                    </div>
-                </form>{% endcomment %}
+
+
             </div>
         </div>
     {% endfor %}
 </div>
- <!--   <div class="container">
-        <div class="display">
-            <form action="{% url 'search' %}" method="get">
-                <input type="text" name="q">
-                <button type="search">Search</button>
-            </form>
-        </div>
-    </div> -->
 {% endblock %}

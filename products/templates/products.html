@@ -4,6 +4,14 @@
 <section class="navpage">
 
 </section>
+    <div class="container search">
+        <div class="display">
+            <form action="{% url 'search' %}" method="get">
+                <input type="text" name="q" size="35" placeholder="What are you looking for?">
+                <button type="search">Search</button>
+            </form>
+        </div>
+    </div>
 <div class="deck">
 <div class="card-deck">
     {% for product in products %}
@@ -14,7 +22,7 @@
                 </div>
             </a>
             <div class="card-body">
-                <h5 class="card-title"><a href="{% url 'see_product' product.id %}">{{ product.name }}</a></h5>
+                <h5 class="card-title">{{ product.name }}</h5>
                 <p class="card-text">Price: €{{ product.price }}</p>
 
             </div>
@@ -22,13 +30,5 @@
     {% endfor %}
 </div>
 </div>
-    <div class="container">
-        <div class="display">
-            <form action="{% url 'search' %}" method="get">
-                <input type="text" name="q">
-                <button type="search">Search</button>
-            </form>
-        </div>
-    </div>
 {% endblock %}
 

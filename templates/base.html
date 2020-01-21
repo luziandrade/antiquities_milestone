@@ -22,16 +22,15 @@
  <nav class="nav">
         <div class="container">
             <div class="logo">
-                <a href="#">Artifacts</a>
+                <a href="{% url 'index' %}">Artifacts</a>
             </div>
             <div id="mainListDiv" class="main_list  justify-content-end">
                 <ul class="navlinks">
                     {% if user.is_authenticated %}
+                        <li><a>Welcome, {{ user }}</a></li>
                         <li><a href="{% url 'products' %}">Products</a> </li>
                         <li><a href="{% url 'items' %}">Bids</a></li>
-                        <li><a href="{% url 'profile' %}">Profile</a></li>
                         <li><a href="{% url 'logout' %}">Logout</a></li>
-                        <li><a href="#">Welcome, {{ user }}</a></li>
                         <li><i class="fa fa-user-circle"></i></li>
                         <li>
                         <a href="{% url 'view_cart' %}">
@@ -44,35 +43,50 @@
                     {% else %}
                          <li><a href="{% url 'login' %}">Login</a></li>
                          <li><a href="{% url 'registration' %}">Register</a></li>
+                         <li><a href="{% url 'products' %}">Products</a> </li>
                     {% endif %}
-
                 </ul>
            </div>
             <span class="navTrigger">
-                <i></i>
-                <i></i>
-                <i></i>
+                {% if user.is_authenticated %}
+                    <i><a href="{% url 'products' %}">Products</a></i>
+                    <i><a href="{% url 'items' %}">Bids</a></i>
+                    <i><a href="{% url 'logout' %}">Logout</a></i>
+                    <i><i class="fa fa-user-circle"></i></i>
+                    <a href="{% url 'view_cart' %}">
+                            <i class="fa fa-shipping-cart"></i>Cart
+                            {% if product_count > 0 %}
+                            <label class="badge badge-warning">{{ product_count }}</label>
+                            {% endif %}
+                        </a>
+                    {% else %}
+                         <i><a href="{% url 'login' %}">Login</a></i>
+                         <i><a href="{% url 'registration' %}">Register</a></i>
+                         <i><a href="{% url 'products' %}">Products</a> </i>
+                    {% endif %}
             </span>
         </div>
- </nav>
-            {% if messages %}
-            <div>
-                {% for message in messages %}
-                    {{ message }}
-                {% endfor %}
-            </div>
-            {% endif %}
 
+ <div class="card text-center">
+     {% if messages %}
+        <div class="card-body">
+            {% for message in messages %}
+            <p class="card-text">{{ message }}</p>
+            {% endfor %}
+        </div>
+     {% endif %}
+</div>
+ </nav>
 
         {% block content %}{% endblock %}
 
- <!--<footer class="footer-distributed">
+<footer class="footer-distributed">
     <div class="footer-left">
         <h3>About<span>Artifacts</span></h3>
         <p class="footer-links">
-            <a href="#">About</a>
+            <a href="{% url 'index' %}">About</a>
             |
-           <a href="#">Auction</a>
+           <a href="{% url 'items' %}">Auction</a>
             |
             <a href="{% url 'registration' %}">Register</a>
         </p>
@@ -91,15 +105,14 @@
     <div class="footer-right">
         <p class="footer-company-about">
             <span>About the company</span>
-            We offer </p>
+            We offer great varieties of unique antiquities!</p>
         <div class="footer-icons">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-instagram"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-youtube"></i></a>
+            <a href="https://www.facebook.com/luana.andrade.50364"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.instagram.com/luzi_andrade/"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/luana-andrade/"><i class="fa fa-linkedin"></i></a>
         </div>
     </div>
-</footer>-->
+</footer>
 
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>

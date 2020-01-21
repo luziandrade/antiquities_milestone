@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from django.contrib import messages
 import env
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -75,7 +76,13 @@ TEMPLATES = [
         },
     },
 ]
-
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
 WSGI_APPLICATION = 'antiquities_milestone.wsgi.application'
 
 # Database

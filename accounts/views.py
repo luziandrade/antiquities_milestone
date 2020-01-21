@@ -13,7 +13,6 @@ def index(request):
 @login_required()
 def logout(request):
     auth.logout(request)
-    messages.success(request, "You have successfully logout ")
     return redirect(reverse('index'))
 
 
@@ -52,6 +51,7 @@ def registration(request):
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request, "You have successfully registered")
+                return redirect(reverse('index'))
             else:
                 messages.error(request, "Unable to register your account at this time")
     else:
@@ -60,7 +60,3 @@ def registration(request):
         "registration_form": registration_form})
 
 
-def user_profile(request):
-    """The user's profile page"""
-    user = User.objects.get(email=request.user.email)
-    return render(request, 'profile.html', {"profile": user})
