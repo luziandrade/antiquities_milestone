@@ -60,3 +60,5 @@ def registration(request):
         "registration_form": registration_form})
 
 
+def faq(request):
+    return render(request, 'faq.html')
