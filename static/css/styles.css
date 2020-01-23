@@ -153,7 +153,11 @@ body {
 .badge-warning[href] {
     background-color: #c67605;
 }
-
+.countdown{
+    margin-top: 85px;
+    font-weight: 900;
+    font-size: 150%;
+}
 .product {
     background-size: contain;
     background-position: center center;
@@ -184,8 +188,9 @@ caption p {
     padding: 5%;!important;
 }
 .card{
-    margin-top: 30px;!important;
+    margin: 30px;!important;
 }
+
 .cart-list{
     height: 200px;
     overflow: hidden;
@@ -734,8 +739,32 @@ footer{
 	footer { position: static; }
 	header { padding-top:40px; }
 }
+
+@media (max-width:425px){
+	.deck, .card { margin:0px}
+}
+
 @media only screen and (max-device-width: 1366px) {
   .home {
     background-attachment: scroll;
   }
+}
+
+@media (max-width: 918px){
+    .card {
+    -ms-flex: 1 0 33%!important;
+    flex: 1 0 33%!important;
+}
+}
+@media (min-width: 918px){
+    .card {
+    -ms-flex: 1 0 25%!important;
+    flex: 1 0 25%!important;
+}
+}
+@media (min-width: 1115px){
+    .card {
+    -ms-flex: 1 0 33%!important;
+    flex: 1 0 33%!important;
+}
 }

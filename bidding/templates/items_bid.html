@@ -4,7 +4,8 @@
 <section class="navpage">
 
 </section>
-<div class="card-columns">
+<div class="deck">
+<div class="card-deck">
     {% for item in items %}
         <div class="card">
             <a href="{% url 'item' item.id %}">
@@ -15,14 +16,13 @@
             <div class="card-body">
                 <h5>{{ item.name }}</h5>
                 <p class="card-text">{{ item.description }}</p>
-                <p class="card-text">€{{ item.price }}</p>
-                <a href="{% url 'item' item.id %}">
-                    <button class="btn btn-warning" type="submit">Bid</button>
-                </a>
 
-
+            </div>
+            <div class="card-footer">
+                <small class="card-text">€{{ item.price }}</small>
             </div>
         </div>
     {% endfor %}
+</div>
 </div>
 {% endblock %}
