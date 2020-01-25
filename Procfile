@@ -1,1 +1,1 @@
-web: gunicorn antiquities_milestone.wsgi::application
+web: gunicorn antiquities_milestone.wsgi:application
