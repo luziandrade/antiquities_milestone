@@ -1,6 +1,5 @@
 import os
 from django.contrib import messages
-#import env
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -15,8 +14,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-#'artifacts-milestone.herokuapp.com'
+ALLOWED_HOSTS = ['artifacts-milestone.herokuapp.com']
+
 
 # Application definition
 
