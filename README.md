@@ -1,20 +1,19 @@
-#Artifacts responsive website Project
+# Artifacts responsive website Project
 ---
-
 
 [![Build Status](https://travis-ci.org/luziandrade/antiquities_milestone.svg?branch=master)](https://travis-ci.org/luziandrade/antiquities_milestone)
 
-###UX
+### UX
 ---
 My goal was to build a website where a users can search , buy and bid unique products on the market.
 
-###Objective
+### Objective
 ---
 * Responsive website
 * Buying an Item
 * Bidding for an Item
 
-###Users
+### Users
 ---
 * Users are going to be between 30 - 85 years old. As some piece will be rather expansive and you need to have a passion for antiquities.
 
