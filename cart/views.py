@@ -7,13 +7,16 @@ def view_cart(request):
 
 
 def add_to_cart(request, id):
-    quantity = int(request.POST.get('quantity'))
+    if request.user.is_authenticated:
+        quantity = int(request.POST.get('quantity'))
 
-    cart = request.session.get('cart', {})
-    cart[id] = cart.get(id, quantity)
+        cart = request.session.get('cart', {})
+        cart[id] = cart.get(id, quantity)
 
-    request.session['cart'] = cart
-    return redirect(reverse('index'))
+        request.session['cart'] = cart
+        return redirect(reverse('index'))
+    else:
+        return redirect(reverse('login'))
 
 
 def adjust_cart(request, id):
