@@ -18,22 +18,22 @@
 </section>
 <div class="card mb-3">
     {% for item in cart_items %}
-         <div class="card mb-3">
+
                 <div class="row no-gutters">
-                    <div class="col-md-5 row-flex cart-list">
+                    <div class="col-md-5 row-flex">
                         <div class="image-container">
                             <img src="{{ MEDIA_URL }}{{ item.product.image }}" class="card-img-top img-responsive" alt="product image">
                         </div>
                     </a>
                     </div>
-                    <div class="card-body cart-list">
+                    <div class="col-md-5 row-flex">
                         <h5>{{ item.product.name }}</h5>
                         <p class="card-text">{{ item.product.description }}</p>
                         <p class="card-text">Quantity: {{ item.quantity }}</p>
                         <p class="card-text">Price per unit: €{{ item.product.price}}</p>
                     </div>
                 </div>
-         </div>
+
     {% endfor %}
 
     <div class="card-footer">
