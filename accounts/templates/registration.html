@@ -6,11 +6,15 @@
 
 </section>
 <div class="form-middle container-sm">
-        <h2>Register here</h2>
+        <div class="col-md-12 search">
+            <div class="section-title text-center wow zoomIn">
+                <h1>Register</h1>
+            </div>
+        </div>
             <form method="POST">
                 {% csrf_token %}
                 {{ registration_form | as_bootstrap }}
-                <button type="submit" class="btn btn-warning">Login</button>
+                <button type="submit" class="btn btn-warning">Register</button>
             </form>
     <p>If you already have an account, you can <a href="{% url 'login' %}">sign in </a></p>
 
