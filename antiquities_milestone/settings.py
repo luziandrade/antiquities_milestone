@@ -121,7 +121,7 @@ USE_TZ = True
 
 # djang-heroku setting
 STATICFILES_LOCATION = 'static'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
